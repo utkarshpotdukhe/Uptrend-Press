@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Feed</title>
+</head>
+<body>
+    <h1>Twitter Feed</h1>
+    {% for username, tweets in tweets_data.items() %}
+        <h2>Tweets from @{{ username }}</h2>
+        <ul>
+            {% for tweet in tweets %}
+                <li>
+                    <strong>{{ tweet.created_at }}</strong>: {{ tweet.text }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
